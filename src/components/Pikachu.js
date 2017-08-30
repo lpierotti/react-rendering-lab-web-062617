@@ -16,6 +16,12 @@ class Pikachu extends React.Component {
     pikachu.width = this.state.size;
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.size !== this.state.size) {
+      this.resizePikachu()
+    }
+  }
+
   makeBigger = () => {
     this.setState({
       size: this.state.size + 10

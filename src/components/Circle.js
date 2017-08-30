@@ -10,6 +10,10 @@ class Circle extends React.Component {
       <div className={`circle ${color}`}></div>
     )
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+  	return this.props.color !== nextProps.color
+  }
 }
 
 export default Circle;
